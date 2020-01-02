@@ -18,9 +18,9 @@ pip install numpy
 3. 安装Python
 - 安装中(^_^)...
 ### 2.运行
+切换至项目目录
 #### 手机用户
 - 通过数据线让手机与电脑连接
-- 在当前目录下打开adb服务
 ```
 adb start-server
 ```
