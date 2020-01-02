@@ -16,7 +16,7 @@ pip install uiautomator
 pip install numpy
 ```
 3. 安装Python
-安装中...
+- 安装中...
 ### 2.运行
 #### 手机用户
 - 通过数据线让手机与电脑连接
