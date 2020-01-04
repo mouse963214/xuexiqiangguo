@@ -28,7 +28,7 @@ if os.path.isfile("db.npy"):
 def autoJob(tv,sleep_time):
     count=0
     drag_str='adb shell input swipe '+str(Width*0.5)+' '+str(Height*0.88)+' '+str(Width*0.5)+' '+str(Height*0.3)
-    for _ in range(10):
+    for _ in range(100):
         for d_text in driver(className='android.widget.TextView'):
             txt=d_text.text
             if len(txt)>11 and txt not in all_of_list and count<6:
@@ -51,7 +51,7 @@ def read_articles():
     time.sleep(5)
     #切换到要闻界面
     driver(text='要闻').click()
-    autoJob("阅读文章",125)
+    autoJob("阅读文章",130)
     print("阅读文章结束")
 
 
@@ -64,7 +64,7 @@ def watch_video():
     #切换到电视台页面
     driver(resourceId="cn.xuexi.android:id/home_bottom_tab_button_contact").click()
     driver(text="联播频道").click()
-    autoJob("观看视频",13)
+    autoJob("观看视频",15)
     driver(text="联播频道").click()
     
     news=None
@@ -79,7 +79,7 @@ def watch_video():
     np.save ('db.npy',text_list)
     
     print("正在观看新闻联播...")
-    time.sleep(1020)
+    time.sleep(1100)
     driver.press('back')
     print("观看视频结束.")
 
@@ -96,6 +96,7 @@ if __name__ == '__main__':
 
     read_articles()
     watch_video()
+    driver.press('back')
     #熄灭屏幕
     os.system('adb shell input keyevent 26')
 
