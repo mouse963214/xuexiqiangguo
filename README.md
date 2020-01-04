@@ -22,6 +22,7 @@ pip install numpy
 #### 手机用户
 - 打开手机的开发者模式，开启手机调试功能并允许通过adb安装应用，通过数据线让手机与电脑连接。本程序基于uiautomator编写，所以第一次会在手机安装两个应用，需要用户手动点击同意安装。
 ```
+adb kill-server
 adb start-server
 ```
 - 运行脚本
@@ -29,8 +30,9 @@ adb start-server
 python study.py
 ```
 #### Android模拟器用户
-- 通过adb连接模拟器，其中7555为mumu模拟器默认端口号，可以参考这篇文章[各模拟器默认端口号](https://www.cnblogs.com/HakunaMatata-/p/10609307.html)
+- 通过adb连接模拟器，其中7555为mumu模拟器默认端口号，可以参考这篇文章[各模拟器默认端口号](https://www.cnblogs.com/HakunaMatata-/p/10609307.html)。模拟器用户由于模拟器加载视频慢，所以time.sleep(times)时间要长一些，才能有效观看。
 ```
+adb kill-server
 adb connect 127.0.0.1:7555
 ```
 - 运行脚本
